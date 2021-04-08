@@ -11,5 +11,14 @@
     "48": "favicon.ico"
   },
   "manifest_version": 2,
-  "version": "1.0"
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ]
 }
