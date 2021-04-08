@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import QuicklyClient from './client/QuicklyClient';
+import ThemeProvider from './theming/ThemeProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <QuicklyClient>
+        <App />
+      </QuicklyClient>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
