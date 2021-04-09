@@ -6,6 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import QuicklyClient from './client/QuicklyClient';
 import ThemeProvider from './theming/ThemeProvider';
 
+const getRootElement = () => {
+  let rootElement = document.getElementById('rootUCP');
+  if (!rootElement) {
+    const divRoot = document.createElement("div"); 
+    divRoot.setAttribute("id", "rootUCP");
+    document.body.appendChild(divRoot);
+  }
+  return document.getElementById('rootUCP');
+};
+
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
@@ -14,7 +24,7 @@ ReactDOM.render(
       </QuicklyClient>
     </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  getRootElement()
 );
 
 // If you want to start measuring performance in your app, pass a function
