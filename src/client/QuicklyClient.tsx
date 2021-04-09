@@ -17,7 +17,14 @@ const QuicklyServices = () => {
 
   React.useEffect(() => {
     quickly.registerOptionServices(services);
+    quickly.handleQuicklyModalShow();
   }, []);
+
+  React.useEffect(() => {
+    if (!quickly.isQuicklyModalVisible) {
+      quickly.handleQuicklyModalShow();
+    }
+  }, [quickly.isQuicklyModalVisible]);
 
   return null;
 };
